@@ -9,7 +9,7 @@ function ContextProvider({ children }) {
   const [isFetching, setIsFetching] = useState(true);
 
   const createPost = async (content) => {
-    const URI = 'http://localhost:8080/api/v1/posts';
+    const URI = 'https://springboot-feed-api.herokuapp.com/api/v1/posts';
     const request = {
         method: "POST",
         headers: {
@@ -24,7 +24,7 @@ function ContextProvider({ children }) {
   };
 
   const createUpvote = async (postId, userId) => {
-    const URI = 'http://localhost:8080/api/v1/posts/up';
+    const URI = 'https://springboot-feed-api.herokuapp.com/api/v1/posts/up';
     const request = {
         method: "POST",
         headers: {
@@ -41,7 +41,7 @@ function ContextProvider({ children }) {
 
   const getPosts = async () => {
     setIsFetching(true);
-    const URI = "http://localhost:8080/api/v1/posts";
+    const URI = "https://springboot-feed-api.herokuapp.com/api/v1/posts";
     const request = {
       method: "GET",
       headers: {
@@ -55,7 +55,7 @@ function ContextProvider({ children }) {
 
   const getLoggedUser = async () => {
     setIsFetching(true);
-    const baseUrl = "http://localhost:8080/api/v1/login";
+    const baseUrl = "https://springboot-feed-api.herokuapp.com/api/v1/login";
     const request = {
       method: "GET",
       headers: {
