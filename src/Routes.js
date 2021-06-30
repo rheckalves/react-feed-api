@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Central from './pages/Central';
+import Home from './pages/Home';
 
 
 const Rotas = () => (
-    <Route exact path="/" component={Central} />
+    <Route exact path="/" component={Home} />
 );
 
 export default Rotas;

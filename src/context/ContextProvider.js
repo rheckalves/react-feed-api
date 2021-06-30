@@ -1,9 +1,9 @@
 
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import CentralContext from './CentralContext';
+import Context from './Context';
 
-function CentralContextProvider({ children }) {
+function ContextProvider({ children }) {
   const [allPosts, setAllPosts] = useState([]);
   const [loggedUser, setLoggedUser] = useState({});
   const [isFetching, setIsFetching] = useState(true);
@@ -81,7 +81,7 @@ function CentralContextProvider({ children }) {
 
 
   return (
-    <CentralContext.Provider
+    <Context.Provider
       value={ {
         isFetching,
         setIsFetching,
@@ -94,12 +94,12 @@ function CentralContextProvider({ children }) {
       } }
     >
       {children}
-    </CentralContext.Provider>
+    </Context.Provider>
   );
 }
 
-CentralContextProvider.propTypes = {
+ContextProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export default CentralContextProvider;
+export default ContextProvider;

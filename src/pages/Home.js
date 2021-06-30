@@ -3,11 +3,11 @@ import CustomAllPosts from "../components/CustomAllPosts";
 import { Grid } from "semantic-ui-react";
 import CustomHeader from "../components/CustomHeader";
 import CustomPostForm from "../components/CustomPostForm";
-import CentralContext from "../context/CentralContext";
+import Context from "../context/Context";
 import 'semantic-ui-css/semantic.min.css'
 
-function Central() {
-  const { loggedUser, allPosts, isFetching, createPost, createUpvote } = useContext(CentralContext);
+function Home() {
+  const { loggedUser, allPosts, isFetching, createPost, createUpvote } = useContext(Context);
 
   if (isFetching) return <span>Carregando...</span>;
   else return (
@@ -15,9 +15,8 @@ function Central() {
       <h3>Seja bem vindo <span style={{ color: "blue"}}>{loggedUser.username}</span>!</h3>
       <Grid
         textAlign="center"
-        style={{ height: "30vh" }}
+        style={{ height: "20vh" }}
         verticalAlign="middle"
-        
       >
         <Grid.Column style={{ maxWidth: 1600, borderRadius: 20 }}>
           <CustomHeader message="Segware Book" />
@@ -29,4 +28,4 @@ function Central() {
   );
 }
 
-export default Central;
+export default Home;

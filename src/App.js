@@ -1,10 +1,10 @@
 import React from 'react';
 import Routes from './Routes';
-import CentralContextProvider from './context/CentralConextProvider';
+import ContextProvider from './context/ContextProvider';
 
 const App = () =>
-<CentralContextProvider>
+<ContextProvider>
   <Routes />
-</CentralContextProvider>
+</ContextProvider>
 
 export default App;
